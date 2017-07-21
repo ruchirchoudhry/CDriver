@@ -1,0 +1,41 @@
+-lib-cov
+-*.seed
+-*.log
+-*.csv
+-*.dat
+-*.out
+-*.pid
+-*.gz
+-*.class
+-*.git
+
+-
+-pids
+-logs
+-results
+-
+-npm-debug.log
+*.DS_Store
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# deployment
+node-server.tar.gz
+server/REVISION
+runtime.json
+node_modules
+dist
+
+# developer
+server/config/developer.json
+client/node_modules
+proxy/node_moduels
+proxy/config/local.yaml
+proxy/dist
+logs
+
+# test reports
+client/reports
