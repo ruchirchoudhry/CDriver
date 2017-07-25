@@ -18,5 +18,5 @@
 package com.CacheConnect.Redis;
 
 public class CacheContoller {
-    
+    String CONST_URL="TEST";
 }
