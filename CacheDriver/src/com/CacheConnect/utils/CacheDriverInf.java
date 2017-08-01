@@ -20,7 +20,7 @@ package com.CacheConnect.utils;
 public interface CacheDriverInf 
 {
     // ############################# Default host and port used for Redis ###################################
-    final String REDIS_HOST_CLUSTER_MODE = "test.qa.grocery-cheetah.qa.walmart.com";//test.qa.grocery-cheetah.qa.walmart.com
+    final String REDIS_HOST_CLUSTER_MODE = "yourhost";
     final int REDIS_PORT=6379;
     final int REDIS_KEY_SEED_VALUE=10000000;
     final int REDIS_MAX_KEY=1000000;
@@ -28,5 +28,6 @@ public interface CacheDriverInf
     final String REDIS_SCHEMA_PRODUCTS="oo:qa:ruchirtest:sku";
     final String REDIS_KEY_FOR_SET = "set";
     // ######################################################################################################
+    
 
 }
