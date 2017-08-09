@@ -17,6 +17,97 @@
  */
 package com.CacheConnect.Redis;
 
-public class CacheContoller {
+import java.net.Socket;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLParameters;
+import javax.net.ssl.SSLSocketFactory;
+
+import com.CacheConnect.Controller.ConnectorClient;
+import com.CacheConnect.utils.CacheDriverInf;
+
+public class CacheContoller implements ConnectorClient,CacheDriverInf {
+    
+    private String host;
+    private int port;
+    private boolean ssl;
+    private SSLSocketFactory sslSocketFactory;
+    private SSLParameters sslParam;
+    private HostnameVerifier hostNameVerifier;
+    private Socket socketConnection;
+    
+
+    public CacheContoller()
+    {
+        
+    }
+    public CacheContoller(final String host)
+    {
+        this.host=REDIS_HOST_MODE;// non cluster mode
+    }
+    public CacheContoller(final String host,final int port)
+    {
+        this.host=REDIS_HOST_MODE;// non cluster mode
+        this.port=REDIS_PORT;// non cluster mode port
+    }
+    public CacheContoller(final String host,final int port,final boolean ssl)
+    {
+        this.host=REDIS_HOST_MODE;// non cluster mode
+        this.port=REDIS_PORT;// non cluster mode port
+        this.ssl=ssl;
+        
+    }
+    public CacheContoller(final String host,final int port,final boolean ssl, SSLSocketFactory sslSocketFactory, SSLParameters sslParam,HostnameVerifier hostNameVerifier)
+    {
+        this.host=REDIS_HOST_MODE;// non cluster mode
+        this.port=REDIS_PORT;// non cluster mode port
+        this.ssl=ssl;
+        this.sslSocketFactory=sslSocketFactory;
+        this.sslParam=sslParam;
+        this.hostNameVerifier=hostNameVerifier;
+        
+    }
     String CONST_URL="TEST-Hello";
+
+    @Override
+    public void connect() {
+       
+        
+    }
+
+    @Override
+    public void getConnectionPool() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void disconnect() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void disconnectPool() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void getSizeOfPoolConnection() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void setSiseOfPoolConnection() {
+        // TODO Auto-generated method stub
+        
+    }
+    public boolean isActiveConnection()
+    {
+        return null!=socketConnection && socketConnection.isBound() && !socketConnection.isClosed()&& socketConnection.isConnected() && !socketConnection.isInputShutdown()
+                &&!socketConnection.isOutputShutdown();
+        
+    }
 }
