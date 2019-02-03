@@ -25,6 +25,7 @@ public interface ConnectorClient {
     void disconnect();
     void disconnectPool();
     void getSizeOfPool();
+    
     void getSizeOfPoolConnection();
     void setSiseOfPoolConnection();
     
