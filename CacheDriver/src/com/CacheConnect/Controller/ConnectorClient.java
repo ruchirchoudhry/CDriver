@@ -17,11 +17,14 @@
  */
 package com.CacheConnect.Controller;
 
+import java.net.SocketException;
+
 public interface ConnectorClient {
-    void connect();
+    void connect() throws SocketException;
     void getConnectionPool();
     void disconnect();
     void disconnectPool();
+    void getSizeOfPool();
     void getSizeOfPoolConnection();
     void setSiseOfPoolConnection();
     
